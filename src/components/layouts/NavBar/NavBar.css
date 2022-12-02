@@ -1,0 +1,37 @@
+.container-all {
+  z-index: 5;
+}
+
+.nav-bar-holder {
+  position: fixed;
+  display: grid;
+  z-index: 100;
+  width: 100vw;
+  margin-top: 15px;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: auto;
+  align-items: center;
+
+}
+
+.side-button-holder-left {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+}
+
+.side-button-holder-right {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+}
+
+.button-holder {
+  display: flex;
+  justify-content: center;
+}
