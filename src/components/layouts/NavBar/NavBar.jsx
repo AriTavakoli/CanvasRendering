@@ -2,18 +2,18 @@ import { ModeContext, ModeDispatchContext } from '@components/ModeContext';
 import modeReducer from "@components/modeReducer.js";
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import DropDown from '@layouts/DropDown.js';
+import DropDown from '@layouts/DropDown/DropDown.jsx';
 import Buttons from "@layouts/Buttons.js";
-import SideBarComponent from '@layouts/SideBarComponent.js';
+import SideBarComponent from '@layouts/SideBar/SideBarComponent.js';
 import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
 import RedoOutlinedIcon from '@mui/icons-material/RedoOutlined';
-import '@/App.css';
+//import '@/App.css';
+import '@layouts/NavBar/NavBar.css';
 import React, { useReducer, useState } from 'react';
 import UndoRedo from '@layouts/Buttons/UndoRedo.jsx';
 
 
 export default function NavBar({ mode, dispatch, handleLocalStorage, handleClear, handleUndo, handleRedo, handleForce, stage, elements }) {
-
   return (
     <div>
       <div className='container-all'  >

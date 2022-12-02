@@ -7,8 +7,6 @@ import { createRoot } from 'react-dom/client';
 import { Stage, Layer, Rect, Text, Circle, Line } from 'react-konva';
 import NavBar from '@layouts/NavBar/NavBar.jsx';
 
-
-
 export default function App() {
 
   const stageRef = useRef('stage');

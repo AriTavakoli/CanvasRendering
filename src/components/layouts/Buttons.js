@@ -36,12 +36,8 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
 export default function Buttons({ handleLocalStorage, handleClear }) {
 
   const dispatch = useContext(ModeDispatchContext)
-
-
   const fontSize = '20px'
-
-
-  const [currentShape, setCurrentShape] = useState('diamond');
+  const [currentShape, setCurrentShape] = useState('rectangle');
 
 
   const handleShape = (event, newShape) => {

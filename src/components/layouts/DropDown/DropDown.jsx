@@ -6,8 +6,9 @@ import ReorderOutlinedIcon from '@mui/icons-material/ReorderOutlined';
 import FolderOpenOutlinedIcon from '@mui/icons-material/FolderOpenOutlined';
 import SaveAltOutlinedIcon from '@mui/icons-material/SaveAltOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import '@layouts/DropDown/DropDown.css';
 
-export default function DropDown({ }) {
+export default function DropDown() {
   const [isShown, setShown] = useState(false);
   return (
     <>

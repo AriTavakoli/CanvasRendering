@@ -32,7 +32,6 @@ export default function DropDown({ }) {
                 opacity: 1,
                 y: '3%',
                 hidden: false,
-
               }}
               exit={{
                 opacity: 0,

@@ -35,3 +35,32 @@
   display: flex;
   justify-content: center;
 }
+
+.undo-redo {
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  z-index: 100;
+}
+.Block:local-styles {
+  align-self: center;
+  justify-self: center;
+}
+
+
+.Block:local-styles {
+  align-self: center;
+  justify-self: center;
+}
+
+.Block:local-styles {
+  align-self: center;
+  justify-self: center;
+}
+
+.Block:local-styles {
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+}

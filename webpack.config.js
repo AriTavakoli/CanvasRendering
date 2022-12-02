@@ -8,25 +8,6 @@ module.exports = {
     ignored: /node_modules/
   },
 
-  mode: 'development',
-
-  entry: {
-    index: './src/index.js',
-
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Development',
-      template: './src/index.html'
-    }),
-  ],
-  devtool: 'inline-source-map',
-
-  devServer: {
-    static: './dist',
-    hot: true,
-  },
-
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
@@ -39,13 +20,31 @@ module.exports = {
     }
   },
 
+  mode: 'development',
 
+  entry: {
+    index: './src/index.js',
+
+  },
 
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js'
   },
 
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Development',
+      template: './src/index.html'
+    }),
+  ],
+
+  devtool: 'inline-source-map',
+
+  devServer: {
+    static: './dist',
+    hot: true,
+  },
 
   module: {
     rules: [

@@ -1,14 +1,13 @@
-
 import React, { useEffect, useReducer, useLayoutEffect, useRef, memo, useState } from "react";
-import Buttons from "./Buttons.js";
-import modeReducer from "../modeReducer.js";
-import { ModeContext, ModeDispatchContext } from '../ModeContext';
+import Buttons from "@layouts/Buttons.js";
+import modeReducer from "@components/modeReducer.js";
+import { ModeContext, ModeDispatchContext } from '@components/ModeContext';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AnimatePresence, AnimateSharedLayout, motion, useCycle } from "framer-motion";
 import CloseIcon from '@mui/icons-material/Close';
 import ToggleButton from '@mui/material/ToggleButton';
 import LocalLibraryOutlinedIcon from '@mui/icons-material/LocalLibraryOutlined';
-
+import '@layouts/SideBar/SideBar.css';
 
 export default function SideBarComponent({ handleLocalStorage, elements, handleForce, stage }) {
 
@@ -103,7 +102,7 @@ export default function SideBarComponent({ handleLocalStorage, elements, handleF
 
 
                 {mapped}
-                
+
               </div>
             </motion.div>
 
