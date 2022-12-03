@@ -37,7 +37,7 @@ export default function Buttons({ handleLocalStorage, handleClear }) {
 
   const dispatch = useContext(ModeDispatchContext)
   const fontSize = '20px'
-  const [currentShape, setCurrentShape] = useState('rectangle');
+  const [currentShape, setCurrentShape] = useState('');
 
 
   const handleShape = (event, newShape) => {

@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require("webpack");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   watchOptions: {
@@ -28,7 +29,7 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '/client/dist'),
     filename: 'bundle.js'
   },
 
@@ -37,7 +38,17 @@ module.exports = {
       title: 'Development',
       template: './src/index.html'
     }),
+    new BundleAnalyzerPlugin(),
+
+    new webpack.ProvidePlugin({
+      React: 'react',
+      ReactDOM: 'react-dom',
+    })
+
   ],
+
+
+
 
   devtool: 'inline-source-map',
 

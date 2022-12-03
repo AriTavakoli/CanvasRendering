@@ -39,20 +39,9 @@ export default function NavBar({ mode, dispatch, handleLocalStorage, handleClear
               </div>
             </div>
 
+            
 
-            <ToggleButtonGroup className='undo-redo'>
-
-              <ToggleButton onClick={() => { handleUndo(); }}>
-                <UndoOutlinedIcon ></UndoOutlinedIcon>
-              </ToggleButton>
-
-
-              <ToggleButton onClick={() => { handleRedo() }}>
-                <RedoOutlinedIcon> </RedoOutlinedIcon>
-              </ToggleButton>
-
-            </ToggleButtonGroup>
-
+            <UndoRedo handleUndoClick={handleUndo} handleRedoClick={handleRedo}></UndoRedo>
 
 
 
