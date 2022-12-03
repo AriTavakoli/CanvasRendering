@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require("webpack");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   watchOptions: {
@@ -38,7 +38,7 @@ module.exports = {
       title: 'Development',
       template: './src/index.html'
     }),
-    new BundleAnalyzerPlugin(),
+  //  new BundleAnalyzerPlugin(),
 
     new webpack.ProvidePlugin({
       React: 'react',
