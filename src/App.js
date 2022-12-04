@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useReducer, useLayoutEffect, useRef, useState, useMemo } from "react";
 import modeReducer from "./components/modeReducer.js";
 import { AnimatePresence, AnimateSharedLayout, motion, useCycle } from "framer-motion";
 import { v4 as uuid } from 'uuid';
@@ -7,7 +7,28 @@ import { createRoot } from 'react-dom/client';
 import { Stage, Layer, Rect, Text, Circle, Line } from 'react-konva';
 import NavBar from '@layouts/NavBar/NavBar.jsx';
 
+// import socket io
+import io from 'socket.io-client';
+
+
+
 export default function App() {
+
+
+
+  // use socket io to connect to server
+
+
+  const socket = useMemo(() => io.connect('http://localhost:3000'), []);
+
+
+  socket.on('connect', (socket) => {
+    console.log('a user connected');
+  });
+
+
+
+
 
   const stageRef = useRef('stage');
   const layerRef = useRef('layer');
@@ -157,6 +178,15 @@ export default function App() {
 
   const handleMouseUp = () => {
     setIsDrawing(false);
+
+    socket.emit('draw', 23);
+    socket.on('draw', (data) => {
+      console.log(data)
+    })
+
+    socket.emit('sd', 'asdsd');
+
+
 
   }
 
