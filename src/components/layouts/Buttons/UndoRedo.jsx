@@ -6,6 +6,8 @@ import '@layouts/Buttons/undo-redo.css';
 
 export default function UndoRedo({ handleUndoClick, handleRedoClick }) {
   return (
+
+    //toggle button
     <ToggleButtonGroup className='undo-redo'>
 
       <ToggleButton onClick={() => { handleUndoClick(); }}>
