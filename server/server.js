@@ -8,10 +8,6 @@ const io = require('socket.io')(server);
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-
-
-
-
 io.on('connect', (socket) => {
   console.log('a user connected');
 
@@ -25,9 +21,6 @@ io.on('connect', (socket) => {
     console.log('sd', data);
     socket.broadcast.emit('sd', data);
   });
-
-
-
 
 });
 
