@@ -13,7 +13,7 @@ io.on('connect', (socket) => {
 
 
   socket.on('draw', (data) => {
-    console.log('darta', data);
+    console.log('data', data);
 
   });
 

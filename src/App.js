@@ -27,9 +27,6 @@ export default function App() {
   });
 
 
-
-
-
   const stageRef = useRef('stage');
   const layerRef = useRef('layer');
 

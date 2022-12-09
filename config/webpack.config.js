@@ -11,13 +11,13 @@ module.exports = {
 
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-      '@components': path.resolve(__dirname, 'src/components'),
-      '@layouts': path.resolve(__dirname, 'src/components/layouts'),
-      '@pages': path.resolve(__dirname, 'src/components/pages'),
-      '@styles': path.resolve(__dirname, 'src/styles'),
-      '@assets': path.resolve(__dirname, 'src/assets'),
-      '@hooks': path.resolve(__dirname, 'src/hooks'),
+      '@': path.resolve(__dirname, './src'),
+      '@components': path.resolve(__dirname, '../src/components'),
+      '@layouts': path.resolve(__dirname, '../src/components/layouts'),
+      '@pages': path.resolve(__dirname, '../src/components/pages'),
+      '@styles': path.resolve(__dirname, '../src/styles'),
+      '@assets': path.resolve(__dirname, '../src/assets'),
+      '@hooks': path.resolve(__dirname, '../src/hooks'),
     }
   },
 
@@ -29,7 +29,7 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, '/client/dist'),
+    path: path.join(__dirname, '../client/dist'),
     filename: 'bundle.js'
   },
 
@@ -62,7 +62,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.jsx?$/,
+        test:  /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
