@@ -21,9 +21,15 @@ export default function SideBarComponent({ handleLocalStorage, elements, handleF
 
     // !! catching JSON parse
 
-    let url = parsedItem[1].dataUrl
+   // let url = parsedItem[1].dataUrl
 
-    //let url = 'https://i.imgur.com/4Z5HJ7M.png'
+   if (parsedItem[1] === undefined) {
+      return
+    } else {
+      var url = parsedItem[1].dataUrl
+    }
+
+  //  let url = 'https://i.imgur.com/4Z5HJ7M.png'
     return (
       <div className="local-row">
         {item}
@@ -40,6 +46,9 @@ export default function SideBarComponent({ handleLocalStorage, elements, handleF
     var name = prompt("ID name", "ID");
     //display the current date and time
     const dataUrl = stage.toDataURL({ pixelRatio: 1 });
+
+
+
 
     const objWrapper = [{ elements }, { dataUrl }];
 

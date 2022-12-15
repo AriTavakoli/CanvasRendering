@@ -13,11 +13,11 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@components': path.resolve(__dirname, '../src/components'),
-      '@layouts': path.resolve(__dirname, '../src/components/layouts'),
-      '@pages': path.resolve(__dirname, '../src/components/pages'),
-      '@styles': path.resolve(__dirname, '../src/styles'),
-      '@assets': path.resolve(__dirname, '../src/assets'),
-      '@hooks': path.resolve(__dirname, '../src/hooks'),
+      '@layouts':    path.resolve(__dirname, '../src/components/layouts'),
+      '@pages':      path.resolve(__dirname, '../src/components/pages'),
+      '@styles':     path.resolve(__dirname, '../src/styles'),
+      '@assets':     path.resolve(__dirname, '../src/assets'),
+      '@hooks':      path.resolve(__dirname, '../src/hooks'),
     }
   },
 
@@ -25,7 +25,6 @@ module.exports = {
 
   entry: {
     index: './src/index.js',
-
   },
 
   output: {
@@ -51,7 +50,7 @@ module.exports = {
   devtool: 'inline-source-map',
 
   devServer: {
-    static: './dist',
+    static: './client/dist',
     hot: true,
   },
 

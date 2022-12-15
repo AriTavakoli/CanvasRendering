@@ -8,26 +8,21 @@ const io = require('socket.io')(server);
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-io.on('connect', (socket) => {
-  console.log('a user connected');
+// io.on('connect', (socket) => {
+//   console.log('a user connected');
 
 
-  socket.on('draw', (data) => {
-    console.log('data', data);
+//   socket.on('draw', (data) => {
+//     console.log('data', data);
 
-  });
+//   });
 
-  socket.on('sd', (data) => {
-    console.log('sd', data);
-    socket.broadcast.emit('sd', data);
-  });
+//   socket.on('sd', (data) => {
+//     console.log('sd', data);
+//     socket.broadcast.emit('sd', data);
+//   });
 
-});
-
-
-
-
-
+// });
 
 
 server.listen(3000, () => {

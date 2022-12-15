@@ -8,7 +8,7 @@ import { Stage, Layer, Rect, Text, Circle, Line } from 'react-konva';
 import NavBar from '@layouts/NavBar/NavBar.jsx';
 
 // import socket io
-import io from 'socket.io-client';
+// import io from 'socket.io-client';
 
 
 
@@ -19,12 +19,12 @@ export default function App() {
   // use socket io to connect to server
 
 
-  const socket = useMemo(() => io.connect('http://localhost:3000'), []);
+  // const socket = useMemo(() => io.connect('http://localhost:3000'), []);
 
 
-  socket.on('connect', (socket) => {
-    console.log('a user connected');
-  });
+  // socket.on('connect', (socket) => {
+  //   console.log('a user connected');
+  // });
 
 
   const stageRef = useRef('stage');
@@ -165,6 +165,7 @@ export default function App() {
 
     const element = createElement(x, y);
 
+
     layer.add(element);
     stage.add(layer);
 
@@ -176,12 +177,12 @@ export default function App() {
   const handleMouseUp = () => {
     setIsDrawing(false);
 
-    socket.emit('draw', 23);
-    socket.on('draw', (data) => {
-      console.log(data)
-    })
+    // socket.emit('draw', 23);
+    // socket.on('draw', (data) => {
+    //   console.log(data)
+    // })
 
-    socket.emit('sd', 'asdsd');
+    // socket.emit('sd', 'asdsd');
 
 
 
