@@ -1,0 +1,50 @@
+{
+  "name": "canvasrendering",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config ./config/webpack.config.js --watch",
+    "start": "webpack-dev-server --config ./config/webpack.config.js --mode development --open --hot",
+    "stats": "webpack --json build-stats.json",
+    "server": "nodemon server/server.js --watch "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.7.2",
+    "nodemon": "^2.0.20",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-middleware": "^6.0.1",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-hot-middleware": "^2.25.3",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.19.3",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.16",
+    "@mui/material": "^5.10.16",
+    "@mui/styled-engine-sc": "^5.10.16",
+    "express": "^4.18.2",
+    "framer-motion": "^7.6.17",
+    "html-webpack-plugin": "^5.5.0",
+    "jsconfig.json": "^2.3.3",
+    "konva": "^8.3.14",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-konva": "^18.2.3",
+    "socket.io": "^4.5.4",
+    "socket.io-client": "^4.5.4",
+    "uuid": "^9.0.0"
+  }
+}
