@@ -1,0 +1,26 @@
+{
+  "name": "canvasrendering",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "cd frontend && npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AriTavakoli/CanvasRendering.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AriTavakoli/CanvasRendering/issues"
+  },
+  "homepage": "https://github.com/AriTavakoli/CanvasRendering#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
