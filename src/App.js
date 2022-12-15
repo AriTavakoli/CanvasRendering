@@ -165,7 +165,7 @@ export default function App() {
 
     const element = createElement(x, y);
 
-
+//
     layer.add(element);
     stage.add(layer);
 

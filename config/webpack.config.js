@@ -28,8 +28,9 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, '../client/dist'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, '../client/dist'),
+    filename: '[bundle].[contenthash].js',
+    clean: true,
   },
 
   plugins: [
