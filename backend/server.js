@@ -5,30 +5,28 @@ const server = http.createServer(app);
 const path = require('path');
 // const io = require('socket.io')(server);
 
-var webpack = require('webpack');
-var webpackConfig = require('../frontend/config/webpack.config');
-var compiler = webpack(webpackConfig);
+
+
+
+// app.use(require("webpack-hot-middleware")(compiler,{
+//   reload : true,
+//   overlay: false,
+//   hot: true,
 
 
 
 
-app.use(require("webpack-hot-middleware")(compiler,{
-  reload : true,
-  overlay: true,
-  hot: true,
-
-
-
-
-}));
+// }));
 
 
 
 app.use(express.static(path.join(__dirname, '../frontend/client/dist')));
 
 
-console.log('sup')
 
+
+
+console.log('susdp')
 
 // io.on('connect', (socket) => {
 //   console.log('a user connected');

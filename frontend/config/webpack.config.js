@@ -24,8 +24,7 @@ module.exports = {
   mode: 'development',
 
   entry: {
-    main: ['webpack-hot-middleware/client', './src/index.js']
-    // index: './src/index.js',
+    index: './src/index.js',
   },
 
   output: {
@@ -39,8 +38,6 @@ module.exports = {
       title: 'Development',
       template: './src/index.html'
     }),
-
-    new webpack.HotModuleReplacementPlugin(),
   //  new BundleAnalyzerPlugin(),
 
     new webpack.ProvidePlugin({

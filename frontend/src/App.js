@@ -14,7 +14,7 @@ import NavBar from '@layouts/NavBar/NavBar.jsx';
 
 export default function App() {
 
-
+console.log('supsdddsd')
 
   // use socket io to connect to server /
 
@@ -40,13 +40,13 @@ export default function App() {
 
   const [transformers, setTransformers] = useState([]);
 
-console.log('sysso')
+  console.log('s')
 
   let layer = layerRef.current;
   let stage = stageRef.current
 
 
-  let element; //
+  let element;
 
   const createElement = (x, y) => {
 
@@ -165,7 +165,7 @@ console.log('sysso')
 
     const element = createElement(x, y);
 
-//
+    //
     layer.add(element);
     stage.add(layer);
 
