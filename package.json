@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/AriTavakoli/CanvasRendering#readme",
   "dependencies": {
+    "@types/source-map": "^0.5.2",
     "concurrently": "^7.6.0"
   }
 }

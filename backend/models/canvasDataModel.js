@@ -3,8 +3,8 @@ const { Schema } = mongoose;
 
 
 const canvasDataSchema = new mongoose.Schema({
-  title: String,
-  body: String,
+  elements: {},
+  previewUrl: {}
 })
 
 

@@ -6,6 +6,8 @@ import Konva from 'konva';
 import { createRoot } from 'react-dom/client';
 import { Stage, Layer, Rect, Text, Circle, Line } from 'react-konva';
 import NavBar from '@layouts/NavBar/NavBar.jsx';
+import axios from 'axios'
+
 
 // import socket io
 // import io from 'socket.io-client';
@@ -14,9 +16,9 @@ import NavBar from '@layouts/NavBar/NavBar.jsx';
 
 export default function App() {
 
-console.log('supsdddsd')
 
-  // use socket io to connect to server /
+
+  // ue socket io to connect to server /
 
 
   // const socket = useMemo(() => io.connect('http://localhost:3000'), []);
@@ -32,6 +34,8 @@ console.log('supsdddsd')
 
   const [isDrawing, setIsDrawing] = useState(false);
 
+  const [mongoData, setMongoData] = useState('');
+
   const [elements, setElements] = useState([]);
 
   const [deleted, setDeleted] = useState([]);
@@ -40,7 +44,6 @@ console.log('supsdddsd')
 
   const [transformers, setTransformers] = useState([]);
 
-  console.log('s')
 
   let layer = layerRef.current;
   let stage = stageRef.current
@@ -113,6 +116,10 @@ console.log('supsdddsd')
     });
 
     setElements(localStorageItemParsed.elements);
+
+
+
+
   }
 
 
@@ -329,9 +336,35 @@ console.log('supsdddsd')
     }
 
   }
+  const retrieve = async () => {
+
+    const fetchData = async () => {
+      const data = await axios({
+        method: 'get',
+        url: 'http://localhost:3000/canvasData',
+      })
+    }
+    const data = await fetchData();
+
+
+    setMongoData(data);
+
+  }
+
+  const setData = () => {
+    console.log(mongoData);
+  }
+
+  useEffect(() => {
+    retrieve();
+    console.log('retirev')
+  }, [])
+
+
 
   return (
     <>
+
       <NavBar mode={mode}
         dispatch={dispatch}
         handleLocalStorage={handleLocalStorage}
@@ -344,6 +377,12 @@ console.log('supsdddsd')
       >
 
       </NavBar>
+
+
+
+      <div onClick={() => { setData() }} style={{ width: '100px', height: '400px', backgroundColor: 'black', zIndex: '2000' }}>
+
+      </div>
 
 
       <Stage style={{ zIndex: '-1' }}

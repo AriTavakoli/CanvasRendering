@@ -5,8 +5,8 @@ const server = http.createServer(app);
 const path = require('path');
 const connectDB = require('../config/db.js')
 
- const model = require('../models/canvasDataModel.js')
- const controllerMethods = require('../controllers/canvasDataController.js')
+const model = require('../models/canvasDataModel.js')
+const canvasController = require('../controllers/canvasDataController.js')
 // const io = require('socket.io')(server);
 
 
@@ -24,7 +24,7 @@ connectDB();
 
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../frontend/client/dist')));
+app.use(express.static(path.join(__dirname, '../../frontend/client/dist')));
 
 
 
@@ -50,26 +50,22 @@ app.post('/save', (req, res) => {
   console.log(req.body.pixelData, 'reqbody')
 
 
-  controllerMethods.saveData(req.body.pixelData.title, req.body.pixelData.body)
+  canvasController.saveData(req.body.pixelData.title, req.body.pixelData.body)
+
+})
+
+app.get('/canvasData', async (req, res) => {
+
+
+  let canvasData = await canvasController.getAllData()
 
 
 
-
-
-
-
-  // res.send(req.body.data)
-
-
-
-
-
-
+  res.send(canvasData);
 
 
 
 })
-
 // io.on('connect', (socket) => {
 //   console.log('a user connected');
 

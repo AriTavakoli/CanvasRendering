@@ -8,6 +8,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import ToggleButton from '@mui/material/ToggleButton';
 import LocalLibraryOutlinedIcon from '@mui/icons-material/LocalLibraryOutlined';
 import '@layouts/SideBar/SideBar.css';
+import ListItem from '@mui/material/ListItem';
+import List from '@mui/material/List';
+import useFetch from '@components/hooks/useFetch.jsx';
+import axios from 'axios';
 
 export default function SideBarComponent({ handleLocalStorage, elements, handleForce, stage }) {
 
@@ -15,24 +19,30 @@ export default function SideBarComponent({ handleLocalStorage, elements, handleF
 
   const [count, setCount] = useState(0);
 
+  const [style, setStyle] = useState();
+
   const mapped = Object.keys(localStorage).map((item) => {
 
     let parsedItem = JSON.parse(localStorage.getItem(item))
 
     // !! catching JSON parse
 
-   // let url = parsedItem[1].dataUrl
+    // let url = parsedItem[1].dataUrl
 
-   if (parsedItem[1] === undefined) {
+    if (parsedItem[1] === undefined) {
       return
     } else {
       var url = parsedItem[1].dataUrl
     }
-// incase error persists, use this url
-  //  let url = 'https://i.imgur.com/4Z5HJ7M.png'
+    // incase error persists, use this url
+    //  let url = 'https://i.imgur.com/4Z5HJ7M.png'
+    //on click add local-row-selected className
     return (
-      <div className="local-row">
-        {item}
+      <div className="local-row" onClick={() => {
+        setStyle('local-row-selected')
+
+      }}>
+        <p>{item}</p>
         <img onClick={() => { handleForce(); handleLocalStorage(item) }} src={url} className="uploadImage" width='100px' alt="uploadImage"></img>
       </div>
     )
@@ -49,14 +59,30 @@ export default function SideBarComponent({ handleLocalStorage, elements, handleF
 
     const objWrapper = [{ elements }, { dataUrl }];
 
-    localStorage.setItem(name, JSON.stringify(objWrapper));
+    //   localStorage.setItem(name, JSON.stringify(objWrapper));
 
+    console.log(objWrapper)
+
+    const fetchData = async () => {
+      const data = await axios({
+        method: 'post',
+        url: 'http://localhost:3000/save',
+        data: {
+          pixelData: { title: 'ariDoc', body: 'sdsds' }
+        }
+      })
+
+      console.log(data);
+    }
+
+    fetchData();
   }
+
+
 
 
   return (
     <>
-
       <ToggleButton onClick={() => { setShown(!isShown); }} >
         <LocalLibraryOutlinedIcon style={{ fontSize: 20, }} > </LocalLibraryOutlinedIcon>
       </ToggleButton>
@@ -101,6 +127,10 @@ export default function SideBarComponent({ handleLocalStorage, elements, handleF
                 <div>
                   <button onClick={() => { handleSave(); setCount(1) }}>Save</button>
                 </div>
+                <div>
+                  <button onClick={() => { retrieve() }}>retrieve</button>
+                </div>
+
 
                 <div className="local-row">
                   <h4> Recently Saved</h4>
