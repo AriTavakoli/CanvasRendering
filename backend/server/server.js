@@ -23,6 +23,7 @@ const canvasController = require('../controllers/canvasDataController.js')
 connectDB();
 
 
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../../frontend/client/dist')));
 
@@ -30,12 +31,6 @@ app.use(express.static(path.join(__dirname, '../../frontend/client/dist')));
 
 
 app.get('/save', (req, res) => {
-
-
-
-
-
-
 
 
 })
@@ -56,15 +51,15 @@ app.post('/save', (req, res) => {
 
 app.get('/canvasData', async (req, res) => {
 
+  // make api call to get all data from db
+  // send data to frontend
+
 
   let canvasData = await canvasController.getAllData()
-
-
-
-  res.send(canvasData);
-
-
-
+    .then((data) => { res.json(data) })
+    .catch((err) => {
+      throw new Error(err);
+    })
 })
 // io.on('connect', (socket) => {
 //   console.log('a user connected');

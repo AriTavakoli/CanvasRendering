@@ -34,7 +34,7 @@ export default function App() {
 
   const [isDrawing, setIsDrawing] = useState(false);
 
-  const [mongoData, setMongoData] = useState('');
+  const [mongoData, setMongoData] = useState('him');
 
   const [elements, setElements] = useState([]);
 
@@ -116,9 +116,6 @@ export default function App() {
     });
 
     setElements(localStorageItemParsed.elements);
-
-
-
 
   }
 
@@ -313,6 +310,7 @@ export default function App() {
         return newBox;
       }
     });
+
     layer.add(tr);
     tr.moveToTop();
     layer.draw();
@@ -326,7 +324,6 @@ export default function App() {
 
     for (let i = 0; i < layerRef.current.children.length; i++) {
       let child = layerRef.current.children
-
       child[i].setAttrs({
         draggable: false
       })
@@ -336,35 +333,35 @@ export default function App() {
     }
 
   }
-  const retrieve = async () => {
 
-    const fetchData = async () => {
-      const data = await axios({
-        method: 'get',
-        url: 'http://localhost:3000/canvasData',
-      })
-    }
-    const data = await fetchData();
+  const printState = () => {
+    console.log(mongoData)
+  };
 
-
-    setMongoData(data);
-
-  }
-
-  const setData = () => {
-    console.log(mongoData);
-  }
 
   useEffect(() => {
-    retrieve();
-    console.log('retirev')
-  }, [])
+    async function fetchData() {
+      let url = 'http://localhost:3000/canvasData';
+      try {
+        const response = axios.get(url);
+        response.then((res) => {
+          setMongoData(res.data);
+          return res.data;
+        }).then((res) => {
+          console.log(res)
+        })
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData()
+
+  }, []);
 
 
 
   return (
     <>
-
       <NavBar mode={mode}
         dispatch={dispatch}
         handleLocalStorage={handleLocalStorage}
@@ -374,15 +371,13 @@ export default function App() {
         handleRedo={handleRedo}
         stage={stage}
         elements={elements}
-      >
-
-      </NavBar>
+      ></NavBar>
 
 
 
-      <div onClick={() => { setData() }} style={{ width: '100px', height: '400px', backgroundColor: 'black', zIndex: '2000' }}>
+      <div onClick={() => { printState() }} style={{ width: '100px', height: '400px', backgroundColor: 'black', zIndex: '2000' }} />
 
-      </div>
+
 
 
       <Stage style={{ zIndex: '-1' }}
@@ -392,7 +387,6 @@ export default function App() {
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp} onClick={handleClick} >
-
         <Layer ref={layerRef}></Layer>
 
       </Stage>
