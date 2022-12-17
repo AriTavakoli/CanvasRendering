@@ -59,7 +59,7 @@ export default function SideBarComponent({ handleLocalStorage, elements, handleF
 
     const objWrapper = [{ elements }, { dataUrl }];
 
-    //   localStorage.setItem(name, JSON.stringify(objWrapper));
+    localStorage.setItem(name, JSON.stringify(objWrapper));
 
     console.log(objWrapper)
 
@@ -71,10 +71,8 @@ export default function SideBarComponent({ handleLocalStorage, elements, handleF
           pixelData: { title: 'ariDoc', body: 'sdsds' }
         }
       })
-
       console.log(data);
     }
-
     fetchData();
   }
 

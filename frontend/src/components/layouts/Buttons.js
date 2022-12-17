@@ -61,7 +61,7 @@ export default function Buttons({ handleLocalStorage, handleClear }) {
     >
 
 
-      <Divider flexItem orientation="vertical" sx={{ mx: 0.5, my: 1 }} />
+      {/* <Divider flexItem orientation="vertical" sx={{ mx: 0.5, my: 1 }} /> */}
 
 
       {/* Utility Buttons */}

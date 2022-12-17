@@ -6,6 +6,7 @@ import Konva from 'konva';
 import { createRoot } from 'react-dom/client';
 import { Stage, Layer, Rect, Text, Circle, Line } from 'react-konva';
 import NavBar from '@layouts/NavBar/NavBar.jsx';
+import Modal from '@layouts/Modal/Modal.jsx';
 import axios from 'axios'
 
 
@@ -375,7 +376,13 @@ export default function App() {
 
 
 
-      <div onClick={() => { printState() }} style={{ width: '100px', height: '400px', backgroundColor: 'black', zIndex: '2000' }} />
+      <Modal></Modal>
+
+
+
+      {/* <SideBarComponent handleForce={handleForce} handleLocalStorage={handleLocalStorage} stage={stage} elements={elements}></SideBarComponent> */}
+
+      {/* <div onClick={() => { printState() }} style={{ width: '100px', height: '400px', backgroundColor: 'black', zIndex: '2000' }} /> */}
 
 
 

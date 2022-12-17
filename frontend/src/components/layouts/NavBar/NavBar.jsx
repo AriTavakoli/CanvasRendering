@@ -39,7 +39,7 @@ export default function NavBar({ mode, dispatch, handleLocalStorage, handleClear
               </div>
             </div>
 
-            
+
 
             <UndoRedo handleUndoClick={handleUndo} handleRedoClick={handleRedo}></UndoRedo>
 
