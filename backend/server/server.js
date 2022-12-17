@@ -3,7 +3,12 @@ const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const path = require('path');
+const connectDB = require('../config/db.js')
+
+ const model = require('../models/canvasDataModel.js')
+ const controllerMethods = require('../controllers/canvasDataController.js')
 // const io = require('socket.io')(server);
+
 
 
 
@@ -14,19 +19,56 @@ const path = require('path');
 //   hot: true,
 
 
-
-
 // }));
+connectDB();
 
 
-
+app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend/client/dist')));
 
 
 
 
+app.get('/save', (req, res) => {
 
-console.log('susdp')
+
+
+
+
+
+
+
+})
+
+// do these functions become async
+
+app.post('/save', (req, res) => {
+
+
+
+  res.status(200);
+  console.log(req.body.pixelData, 'reqbody')
+
+
+  controllerMethods.saveData(req.body.pixelData.title, req.body.pixelData.body)
+
+
+
+
+
+
+
+  // res.send(req.body.data)
+
+
+
+
+
+
+
+
+
+})
 
 // io.on('connect', (socket) => {
 //   console.log('a user connected');
