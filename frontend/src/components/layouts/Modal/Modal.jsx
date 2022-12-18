@@ -2,13 +2,37 @@ import React, { useEffect, useReducer, useLayoutEffect, useRef, useState, useMem
 import { AnimatePresence, AnimateSharedLayout, motion, useCycle } from "framer-motion";
 import './Modal.css';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Paper from '@mui/material/Paper';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import ToggleButton from '@mui/material/ToggleButton'
+import CloseIcon from '@mui/icons-material/Close';
+
 
 export default function Modal({ }) {
 
-  const [active, setActive] = useState(false);
+  let data = [
+    { name: 'name', value: 'value' },
+    { name: 'name', value: 'value' },
+    { name: 'name', value: 'value' },
+  ]
+
+  const [active, setActive] = useState(true);
+
+  const mappedContent = data.map((item) => {
+
+    return (
+      <div className="modalItem">
+        <p>{item.name}</p>
+        <p>{item.value}</p>
+      </div>
+
+    )
+  })
+
+
+
+
 
   return (
     <>
@@ -17,10 +41,9 @@ export default function Modal({ }) {
           <ToggleButton style={{ borderRadius: '40px' }} onClick={() => {
             setActive(!active)
           }}>
-            <KeyboardArrowUpIcon></KeyboardArrowUpIcon>
+            {active ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
           </ToggleButton>
         </ToggleButtonGroup>
-
       </div>
 
       <AnimatePresence>
@@ -48,6 +71,35 @@ export default function Modal({ }) {
               ease: 'easeOut'
             }}
           >
+            <div className='modalTopRow'>
+              <motion.div className='modalCloseButtonContainer'>
+                <ToggleButton style={{ borderStroke: 'white' }} onClick={() => {
+                  setActive(!active)
+                }}>
+                  <CloseIcon style={{ fontSize: 20 }}></CloseIcon>
+                </ToggleButton>
+              </motion.div>
+            </div>
+
+
+            <div className='modalContentContainer'>
+
+              <div className='modalContentRow'>
+
+                {mappedContent}
+              </div>
+              <div className='modalContentRow'>
+
+                {mappedContent}
+              </div>
+              <div className='modalContentRow'>
+
+                {mappedContent}
+              </div>
+
+            </div>
+
+
           </motion.div>
         )
         }
