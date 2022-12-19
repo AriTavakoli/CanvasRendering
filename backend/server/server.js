@@ -8,7 +8,7 @@ const connectDB = require('../config/db.js')
 const model = require('../models/canvasDataModel.js')
 const canvasController = require('../controllers/canvasDataController.js')
 // const io = require('socket.io')(server);
-
+const models = require( '@models/canvasDataModel.js');
 
 
 

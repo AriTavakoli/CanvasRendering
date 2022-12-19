@@ -73,6 +73,39 @@ export default function App() {
         });
         return element;
 
+      case 'circle':
+        element = new Konva.Circle({
+          x: x,
+          y: y,
+          radius: 50,
+          stroke: 'black',
+          strokeWidth: 3,
+          draggable: true,
+          id: uuid()
+        });
+        return element;
+
+      case 'label':
+        element = new Konva.Label({
+          x: x,
+          y: y,
+          draggable: true,
+          id: uuid()
+          
+        });
+        return element;
+
+
+
+
+
+
+
+      // fill out more cases for konva elements
+
+
+
+
       case 'arrow':
         element = new Konva.Arrow({
           points: [x, y],
@@ -151,6 +184,9 @@ export default function App() {
       case 'text':
         interpolatedElement.text(stageRef.current.getPointerPosition().x - interpolatedElement.x())
         interpolatedElement.text(stageRef.current.getPointerPosition().y - interpolatedElement.y())
+        break;
+      case 'label':
+        interpolatedElement.text(stageRef.current.getPointerPosition().x - interpolatedElement.x())
         break;
       default:
         return;

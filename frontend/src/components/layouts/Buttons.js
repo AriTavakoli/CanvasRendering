@@ -81,11 +81,19 @@ export default function Buttons({ handleLocalStorage, handleClear }) {
 
 
         <ToggleButton value="triangle" aria-label="triangle"
-          onClick={() => { dispatch({ type: 'triangle' }) }}>
+          onClick={() => { dispatch({ type: 'label' }) }}>
           <ChangeHistoryIcon style={{ fontSize: fontSize }} />
         </ToggleButton>
 
         <ToggleButton value="line" aria-label="line"
+          onClick={() => { dispatch({ type: 'line' }) }} >
+          <HorizontalRuleIcon style={{ fontSize: fontSize }} />
+        </ToggleButton>
+        <ToggleButton value="line" aria-label="sq"
+          onClick={() => { dispatch({ type: 'line' }) }} >
+          <HorizontalRuleIcon style={{ fontSize: fontSize }} />
+        </ToggleButton>
+        <ToggleButton value="line" aria-label="sd"
           onClick={() => { dispatch({ type: 'line' }) }} >
           <HorizontalRuleIcon style={{ fontSize: fontSize }} />
         </ToggleButton>

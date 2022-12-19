@@ -1,0 +1,12 @@
+// fill this out with my setting for the project
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+      "@models/*": ["./models/*" ]
+    }
+  },
+  "exclude": ["node_modules"]
+}

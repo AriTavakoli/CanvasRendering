@@ -19,6 +19,7 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   z-index: 10000;
+  overflow: hidden;
 
 }
 
@@ -30,6 +31,13 @@
   padding: 10px;
 
 }
+
+@media (max-width: 768px) {
+  .modalContainer {
+
+  }
+}
+
 
 .modelContentContainer {
   display: flex;
@@ -61,6 +69,8 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: black;
+  margin: 10px;
 
 
 }
