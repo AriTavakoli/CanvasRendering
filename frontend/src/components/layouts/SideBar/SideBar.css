@@ -78,3 +78,23 @@ body {
   margin-bottom: 20px;
 
 }
+
+.local-row .dark {
+  display: flex;
+  justify-content: space-around;
+  direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #383838;
+
+}
+
+.local-row .light {
+  display: flex;
+  justify-content: space-around;
+  direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+
+}
