@@ -1,3 +1,4 @@
+const { check, validationResult } = require('express-validator');
 
 app.post('/login', [
   // Validate the email address
